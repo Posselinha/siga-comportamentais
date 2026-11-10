@@ -29,21 +29,21 @@ public class Main {
 
         System.out.println();
         System.out.println("2) Reacoes a matricula, todas dentro da fachada");
-        FachadaMatricula fachada = new FachadaMatricula();
+        PublicadorMatricula publicador = new PublicadorMatricula();
+
+        publicador.registrar(new NotificadorEmail());
+        publicador.registrar(new PainelVagas());
+        publicador.registrar(new AvisoCoordenacao());
+        publicador.registrar(new RegistroAuditoria());
+
+        FachadaMatricula fachada = new FachadaMatricula(publicador);
         fachada.matricular(bolsista, "DSM-2A", false);
 
         System.out.println();
-        System.out.println("   Agora com a turma lotada, e o aviso a coordenacao falhando:");
         try {
             fachada.matricular(egresso, "DSM-2B", true);
         } catch (IllegalStateException e) {
             System.out.println("   [erro] " + e.getMessage());
         }
-        System.out.println("   >> DESLIZE 2: a falha de UMA reacao impediu a auditoria,");
-        System.out.println("      que vinha depois dela. E a quinta reacao sera a quinta");
-        System.out.println("      alteracao nesta mesma classe.");
-
-        System.out.println();
-        System.out.println("Sua tarefa: ver o README.md e a ficha de atividade pratica.");
     }
 }
