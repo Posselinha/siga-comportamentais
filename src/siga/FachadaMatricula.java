@@ -25,7 +25,8 @@ public class FachadaMatricula {
     private final AvisoCoordenacao avisoCoordenacao = new AvisoCoordenacao();
 
     public Matricula matricular(Aluno aluno, String codigoTurma, boolean turmaLotada) {
-        Matricula nova = new Matricula(aluno, codigoTurma);
+        PoliticaDesconto politica = PoliticaDescontoFactory.criar(aluno);
+        Matricula nova = new Matricula(aluno, codigoTurma, politica);
         armazem.add(nova);
 
         notificadorEmail.enviarConfirmacao(nova);

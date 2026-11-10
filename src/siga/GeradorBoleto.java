@@ -8,6 +8,6 @@ public class GeradorBoleto {
 
     public void emitir(Matricula matricula, double valorBase) {
         double valor = calcularValorDoBoleto(matricula, valorBase);
-        System.out.printf("   [boleto] %s: R$ %.2f%n", aluno.getNome(), valor);
+        System.out.printf("   [boleto] %s: R$ %.2f%n", matricula.getAluno().getNome(), valor);
     }
 }

@@ -4,7 +4,7 @@ public class Matricula {
 
     private final Aluno aluno;
     private final String codigoTurma;
-    private final PoliticaDesconto PoliticaDesconto;
+    private final PoliticaDesconto politicaDesconto;
 
     public Matricula(Aluno aluno, String codigoTurma, PoliticaDesconto politicaDesconto) {
         this.aluno = aluno;
