@@ -1,10 +1,11 @@
 package siga;
 
-/** Reação à matrícula. Pronta. Falha de propósito, para a etapa 4. */
-public class AvisoCoordenacao {
+public class AvisoCoordenacao implements OuvinteMatricula {
 
-    public void enviar(String codigoTurma) {
+    @Override
+    public void aoMatricular(Matricula matricula) {
         throw new IllegalStateException(
-                "servico de aviso indisponivel para " + codigoTurma);
+                "servico de aviso indisponivel para "
+                + matricula.getCodigoTurma());
     }
 }
