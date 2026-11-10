@@ -1,5 +1,8 @@
 package siga;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class PublicadorMatricula {
 
     private final List<OuvinteMatricula> ouvintes = new ArrayList<>();
