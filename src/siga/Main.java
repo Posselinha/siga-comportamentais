@@ -35,6 +35,7 @@ public class Main {
         publicador.registrar(new PainelVagas());
         publicador.registrar(new AvisoCoordenacao());
         publicador.registrar(new RegistroAuditoria());
+        publicador.registrar(new EstatisticaOcupacao());
 
         FachadaMatricula fachada = new FachadaMatricula(publicador);
         fachada.matricular(bolsista, "DSM-2A", false);
